@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello World!</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  <body>
+  <!-- Put Python code inside the the <py-script> tag -->
+    <input style="color: blue;background-color: red;"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="type"
+            />
+    <input pys-onClick="sub" type="submit" id="btn-form" value="submit">
+    <p>Output -></p>
+    <p id='output'></p>
+    <py-script>
+    def sub(*args, **kwargs):
+        print("In PyScript")
+        
+        result_place = Element('output')
+        result_place.write(f"{Element('name').value}")
+    </py-script>
+  </body>
+</html>
